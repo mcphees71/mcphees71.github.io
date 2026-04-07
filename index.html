@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Strategic Task Solutions, LLC — Service-Disabled Veteran-Owned Small Business providing defense consulting, ISR support, intelligence training, and professional services.">
+<title>Strategic Task Solutions, LLC | SDVOSB Defense Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:      #1B2A4A;
+    --navy-dark: #0d1a36;
+    --navy-deep: #080f20;
+    --gold:      #C9A84C;
+    --gold-dark: #8a6f2e;
+    --gold-light:#E2C96A;
+    --silver:    #C0C0C0;
+    --white:     #FFFFFF;
+    --off-white: #F5F4F0;
+    --text-dim:  #94a3b8;
+    --text-muted:#4b5563;
+    --border:    rgba(201,168,76,0.15);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy-deep);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID TEXTURE OVERLAY ─────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(8,15,32,0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-brand-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+  }
+
+  .nav-brand-tag {
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2em !important;
+    color: var(--navy) !important;
+    background: var(--gold);
+    padding: 8px 20px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* ── HERO ────────────────────────────────────────── */
+  #home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #home::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(27,42,74,0.8) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #home::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-mark {
+    margin-bottom: 32px;
+  }
+
+  .hero-h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    max-width: 800px;
+  }
+
+  .hero-h1 span { color: var(--gold); }
+
+  .hero-sub {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    max-width: 700px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 580px;
+    margin-bottom: 48px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(201,168,76,0.1);
+  }
+
+  /* Scroll indicator */
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.4;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-hint span {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .scroll-arrow {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTIONS ────────────────────────────────────── */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 100px 48px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: 48px;
+    line-height: 1.2;
+  }
+
+  .section-title span { color: var(--gold); }
+
+  /* ── ABOUT ────────────────────────────────────────── */
+  #about { background: var(--navy-deep); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.9;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .about-text p strong {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  /* SDVOSB callout */
+  .sdvosb-callout {
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    position: relative;
+    margin-top: 32px;
+  }
+
+  .sdvosb-callout::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .sdvosb-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .sdvosb-callout p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Team bios */
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .bio-card {
+    background: rgba(27,42,74,0.3);
+    border: 1px solid var(--border);
+    padding: 28px 28px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .bio-card:hover { border-color: rgba(201,168,76,0.4); }
+
+  .bio-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .bio-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .bio-text {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .bio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .bio-tag {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 3px 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* Clearances row */
+  .clearance-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .clearance-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(27,42,74,0.5);
+    border: 1px solid var(--border);
+  }
+
+  .clearance-icon {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .clearance-text {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ── CAPABILITIES ─────────────────────────────────── */
+  #capabilities { background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy-dark) 100%); }
+
+  .cap-intro {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 680px;
+    margin-bottom: 56px;
+    line-height: 1.8;
+  }
+
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 64px;
+  }
+
+  .cap-card {
+    background: rgba(27,42,74,0.4);
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    transition: background 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+
+  .cap-card:hover {
+    background: rgba(27,42,74,0.7);
+    border-color: rgba(201,168,76,0.35);
+  }
+
+  .cap-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+
+  .cap-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .cap-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .cap-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cap-list li {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cap-list li::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  /* NAICS strip */
+  .naics-strip {
+    background: rgba(27,42,74,0.3);
+    border: 1px solid var(--border);
+    padding: 24px 32px;
+  }
+
+  .naics-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .naics-codes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .naics-item {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+  }
+
+  .naics-item span {
+    color: var(--white);
+    font-weight: 600;
+    margin-right: 6px;
+  }
+
+  /* ── CONTACT ─────────────────────────────────────── */
+  #contact {
+    background: var(--navy-dark);
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-intro {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-item-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .contact-item-value {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-item-value a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-item-value a:hover { color: var(--gold); }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(27,42,74,0.5);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-group select option { background: var(--navy-dark); }
+
+  .form-submit {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { background: var(--gold-light); }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: var(--navy-deep);
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+  }
+
+  .footer-right {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-align: right;
+  }
+
+  .footer-sdvosb {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 700;
+    margin-top: 6px;
+  }
+
+  /* ── DIVIDER LINE ────────────────────────────────── */
+  .gold-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 48px 0;
+    opacity: 0.3;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    #home { padding: 100px 24px 60px; }
+    .section-inner { padding: 72px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .team-grid { grid-template-columns: 1fr; }
+    .cap-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="data:image/png;base64,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" alt="STS" width="40" height="40">
+    <div class="nav-brand">
+      <span class="nav-brand-name">STRATEGIC TASK SOLUTIONS</span>
+      <span class="nav-brand-tag">Defense · Consulting · SDVOSB</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section id="home">
+  <div class="hero-eyebrow">Service-Disabled Veteran-Owned Small Business</div>
+
+  <div class="hero-mark">
+    <svg width="90" height="90" viewBox="0 0 90 90">
+      <defs>
+        <linearGradient id="hs" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F4F4F4"/><stop offset="50%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#AAAAAA"/>
+        </linearGradient>
+        <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#E2C96A"/><stop offset="100%" stop-color="#C9A84C"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="15" height="3" fill="#C9A84C"/>
+      <rect x="6" y="6" width="3" height="15" fill="#C9A84C"/>
+      <rect x="69" y="6" width="15" height="3" fill="#C9A84C"/>
+      <rect x="81" y="6" width="3" height="15" fill="#C9A84C"/>
+      <rect x="6" y="81" width="15" height="3" fill="#C9A84C"/>
+      <rect x="6" y="69" width="3" height="15" fill="#C9A84C"/>
+      <rect x="69" y="81" width="15" height="3" fill="#C9A84C"/>
+      <rect x="81" y="69" width="3" height="15" fill="#C9A84C"/>
+      <text x="45" y="52" font-family="Arial Black,Impact,Arial,sans-serif" font-weight="900" font-size="34" fill="url(#hs)" text-anchor="middle">S</text>
+      <rect x="16" y="58" width="58" height="2.5" fill="#C9A84C"/>
+      <text x="45" y="78" font-family="Arial Black,Impact,Arial,sans-serif" font-weight="900" font-size="22" fill="url(#hg)" text-anchor="middle" letter-spacing="4">TS</text>
+    </svg>
+  </div>
+
+  <h1 class="hero-h1">Mission-Ready.<br><span>Results-Driven.</span></h1>
+  <p class="hero-sub">Corporate & Combat Proven Leadership</p>
+
+  <p class="hero-desc">
+    Strategic Task Solutions, LLC delivers operationally informed defense consulting, professional services, and cleared key personnel to U.S. Government agencies and prime contractors. Built by veterans. Trusted by operators.
+  </p>
+
+  <div class="hero-badges">
+    <div class="badge"><div class="badge-dot"></div>TS/SCI Cleared Leadership</div>
+    <div class="badge"><div class="badge-dot"></div>Air-to-Ground Integration</div>
+    <div class="badge"><div class="badge-dot"></div>PMP Certified</div>
+    <div class="badge"><div class="badge-dot"></div>ISR Operations</div>
+    <div class="badge"><div class="badge-dot"></div>FMS Training</div>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#capabilities" class="btn-primary">Our Capabilities</a>
+    <a href="#contact" class="btn-secondary">Get In Touch</a>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title">Built by Veterans.<br><span>Trusted by Operators.</span></h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          <strong>Strategic Task Solutions, LLC (STS)</strong> is a Service-Disabled Veteran-Owned Small Business headquartered in Merritt Island, Florida. We provide mission-ready defense consulting, professional services, and cleared key personnel to U.S. Government prime contractors and DoD agencies.
+        </p>
+        <p>
+          Our leadership team has stood up organizations from concept to full operational capability, delivered 100% revenue growth within 12 months, and managed full P&L accountability across multi-aircraft ISR fleets supporting Navy, USMC, and SOCOM customers. We've operated in austere combat environments and directed enterprise-level programs — bringing that same standard of execution to every engagement.
+        </p>
+        <p>
+          STS bridges the gap between operational experience and corporate execution — delivering solutions that are both tactically sound and professionally precise. From fires integration and ISR payload certification to international partner capacity building and business development capture, our team has done it at the highest levels.
+        </p>
+
+        <div class="sdvosb-callout">
+          <div class="sdvosb-label">SDVOSB Advantage</div>
+          <p>As a verified Service-Disabled Veteran-Owned Small Business, STS is eligible for VA sole-source awards up to $5M and DoD set-aside contracts. Teaming partners benefit from our SDVOSB status to meet small business subcontracting goals and access our operationally proven, cleared professional network.</p>
+        </div>
+      </div>
+
+      <div>
+        <!-- CREDENTIAL STATS -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-bottom:24px;">
+          <div style="background:rgba(27,42,74,0.5); border:1px solid rgba(201,168,76,0.15); padding:24px 20px;">
+            <div style="font-family:'Orbitron',sans-serif; font-size:28px; font-weight:900; color:#C9A84C; margin-bottom:4px;">20+</div>
+            <div style="font-size:11px; color:#94a3b8; letter-spacing:0.15em; text-transform:uppercase;">Years Defense Experience</div>
+          </div>
+          <div style="background:rgba(27,42,74,0.5); border:1px solid rgba(201,168,76,0.15); padding:24px 20px;">
+            <div style="font-family:'Orbitron',sans-serif; font-size:16px; font-weight:900; color:#C9A84C; margin-bottom:4px; line-height:1.2;">Full<br>Spectrum</div>
+            <div style="font-size:11px; color:#94a3b8; letter-spacing:0.15em; text-transform:uppercase;">Flight Operations</div>
+          </div>
+          <div style="background:rgba(27,42,74,0.5); border:1px solid rgba(201,168,76,0.15); padding:24px 20px;">
+            <div style="font-family:'Orbitron',sans-serif; font-size:28px; font-weight:900; color:#C9A84C; margin-bottom:4px;">100%</div>
+            <div style="font-size:11px; color:#94a3b8; letter-spacing:0.15em; text-transform:uppercase;">Mission Success Rate</div>
+          </div>
+          <div style="background:rgba(27,42,74,0.5); border:1px solid rgba(201,168,76,0.15); padding:24px 20px;">
+            <div style="font-family:'Orbitron',sans-serif; font-size:28px; font-weight:900; color:#C9A84C; margin-bottom:4px;">5+</div>
+            <div style="font-size:11px; color:#94a3b8; letter-spacing:0.15em; text-transform:uppercase;">Theaters of Operation</div>
+          </div>
+        </div>
+
+        <!-- EXPERTISE TAGS -->
+        <div style="background:rgba(27,42,74,0.3); border:1px solid rgba(201,168,76,0.15); padding:20px 24px; margin-bottom:24px;">
+          <div style="font-size:9px; letter-spacing:0.3em; color:#C9A84C; text-transform:uppercase; margin-bottom:14px; font-weight:700;">Leadership Competencies</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">Strategic Planning & Execution</span>
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">P&L Management</span>
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">ISR Systems Integration</span>
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">Air-to-Ground Integration</span>
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">International Partner Training</span>
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">BD & Capture Management</span>
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">Organizational Development</span>
+            <span style="font-size:10px; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:#C9A84C; padding:4px 10px; letter-spacing:0.1em;">Risk Management & Governance</span>
+          </div>
+        </div>
+
+        <!-- CLEARANCE / CREDENTIALS ROW -->
+        <div class="clearance-row">
+          <div class="clearance-badge">
+            <div class="clearance-icon"></div>
+            <span class="clearance-text">Active TS/SCI</span>
+          </div>
+          <div class="clearance-badge">
+            <div class="clearance-icon"></div>
+            <span class="clearance-text">PMP Certified</span>
+          </div>
+          <div class="clearance-badge">
+            <div class="clearance-icon"></div>
+            <span class="clearance-text">SAM.gov Registered</span>
+          </div>
+          <div class="clearance-badge">
+            <div class="clearance-icon"></div>
+            <span class="clearance-text">SDVOSB Verified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAST PERFORMANCE STRIP -->
+    <div style="margin-top:56px;">
+      <div style="font-size:9px; letter-spacing:0.35em; color:#C9A84C; text-transform:uppercase; margin-bottom:20px; font-weight:700; display:flex; align-items:center; gap:12px;"><span style="display:block; width:20px; height:1px; background:#C9A84C;"></span>Organizational Experience</div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:2px;">
+        <div style="background:rgba(27,42,74,0.4); border:1px solid rgba(201,168,76,0.12); padding:20px 18px;">
+          <div style="font-family:'Orbitron',sans-serif; font-size:11px; font-weight:700; color:#ffffff; letter-spacing:0.06em; margin-bottom:6px;">A2G International</div>
+          <div style="font-size:9px; color:#C9A84C; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px;">COO / VP Operations</div>
+          <div style="font-size:11px; color:#94a3b8; line-height:1.6;">Full P&L ownership; 11-aircraft ISR fleet; Navy, USMC & SOCOM contracts; 100% revenue growth in 12 months.</div>
+        </div>
+        <div style="background:rgba(27,42,74,0.4); border:1px solid rgba(201,168,76,0.12); padding:20px 18px;">
+          <div style="font-family:'Orbitron',sans-serif; font-size:11px; font-weight:700; color:#ffffff; letter-spacing:0.06em; margin-bottom:6px;">MAG Aerospace</div>
+          <div style="font-size:9px; color:#C9A84C; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px;">OCONUS Program Manager</div>
+          <div style="font-size:11px; color:#94a3b8; line-height:1.6;">Deployed ISR site director supporting Joint Special Operations Forces in active combat theater; 100% mission success rate.</div>
+        </div>
+        <div style="background:rgba(27,42,74,0.4); border:1px solid rgba(201,168,76,0.12); padding:20px 18px;">
+          <div style="font-family:'Orbitron',sans-serif; font-size:11px; font-weight:700; color:#ffffff; letter-spacing:0.06em; margin-bottom:6px;">Raytheon / Air USA</div>
+          <div style="font-size:9px; color:#C9A84C; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px;">PM / SME / Director</div>
+          <div style="font-size:11px; color:#94a3b8; line-height:1.6;">Targeting SME in Afghanistan; Air-to-Ground Integration director across 35-aircraft fleet; ISR capability integration and BD.</div>
+        </div>
+        <div style="background:rgba(27,42,74,0.4); border:1px solid rgba(201,168,76,0.12); padding:20px 18px;">
+          <div style="font-family:'Orbitron',sans-serif; font-size:11px; font-weight:700; color:#ffffff; letter-spacing:0.06em; margin-bottom:6px;">U.S. Air Force</div>
+          <div style="font-size:9px; color:#C9A84C; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px;">Special Operations</div>
+          <div style="font-size:11px; color:#94a3b8; line-height:1.6;">20+ years; Air-to-Ground Integration across full spectrum; Bosnia, Kosovo, Kuwait, Afghanistan & Iraq; 85-person squadron command.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CAPABILITIES ─────────────────────────────────── -->
+<section id="capabilities">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Core <span>Capabilities</span></h2>
+    <p class="cap-intro">
+      STS delivers a full spectrum of defense consulting and professional services — from ISR operations and intelligence training to program management, business development, and international partner capacity building.
+    </p>
+
+    <div class="cap-grid">
+
+      <div class="cap-card">
+        <div class="cap-number">01</div>
+        <div class="cap-title">ISR Operations & Support</div>
+        <div class="cap-desc">End-to-end ISR mission support with deep operational experience across manned and unmanned platforms.</div>
+        <ul class="cap-list">
+          <li>Full-motion video (FMV) operations</li>
+          <li>ISR mission planning & coordination</li>
+          <li>Sensor & platform integration</li>
+          <li>Part 91, Part 135 & DCMA 8210.1D compliance</li>
+        </ul>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-number">02</div>
+        <div class="cap-title">Intelligence Training</div>
+        <div class="cap-desc">SOF-proven training programs delivered by operators with real-world collection and analysis experience.</div>
+        <ul class="cap-list">
+          <li>FMV analyst instruction</li>
+          <li>Intelligence curriculum development</li>
+          <li>Air-to-Ground Integration training</li>
+          <li>SOF-tailored coursework</li>
+        </ul>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-number">03</div>
+        <div class="cap-title">Program & Project Management</div>
+        <div class="cap-desc">PMP-certified leadership with proven DoD contract execution experience at the program and portfolio level.</div>
+        <ul class="cap-list">
+          <li>DoD program management</li>
+          <li>EVMS / EVM tracking</li>
+          <li>Proposal & capture support</li>
+          <li>Subcontract management</li>
+        </ul>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-number">04</div>
+        <div class="cap-title">International Partner Training</div>
+        <div class="cap-desc">FMS and IMET training program design and delivery for allied and partner nation security forces.</div>
+        <ul class="cap-list">
+          <li>FMS training program design</li>
+          <li>AFRICOM / SOCOM partner support</li>
+          <li>Aviation & ISR skills transfer</li>
+          <li>Curriculum localization</li>
+        </ul>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-number">05</div>
+        <div class="cap-title">Business Development & Capture</div>
+        <div class="cap-desc">Full-spectrum BD support from opportunity identification through proposal submission.</div>
+        <ul class="cap-list">
+          <li>Capture management</li>
+          <li>Pipeline development & strategy</li>
+          <li>Teaming & partnership development</li>
+          <li>Market analysis & positioning</li>
+        </ul>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-number">06</div>
+        <div class="cap-title">Key Personnel Staffing</div>
+        <div class="cap-desc">Rapid deployment of cleared, SOF-experienced professionals for prime contractor teaming arrangements.</div>
+        <ul class="cap-list">
+          <li>TS/SCI cleared professionals</li>
+          <li>SOF-experienced cadre</li>
+          <li>Subject matter experts</li>
+          <li>Rapid deployment capability</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="naics-strip">
+      <div class="naics-label">NAICS Codes</div>
+      <div class="naics-codes">
+        <div class="naics-item"><span>541611</span>Management Consulting</div>
+        <div class="naics-item"><span>541990</span>Other Professional Services</div>
+        <div class="naics-item"><span>561320</span>Temporary Staffing Services</div>
+        <div class="naics-item"><span>611699</span>Technical & Trade Schools</div>
+        <div class="naics-item"><span>481211</span>Nonscheduled Air Transportation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ─────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Work <span>Together</span></h2>
+
+    <div class="contact-grid">
+
+      <div>
+        <p class="contact-intro">
+          Whether you're a prime contractor looking for a cleared SDVOSB teaming partner, a government program office seeking specialized consulting support, or an organization in need of key personnel — we want to hear from you.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-item-label">General Inquiries</span>
+            <span class="contact-item-value"><a href="mailto:strategictask@strategic-task.com">strategictask@strategic-task.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Location</span>
+            <span class="contact-item-value">Merritt Island, Florida</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">SAM.gov</span>
+            <span class="contact-item-value">Registered & Active · SDVOSB Verified</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="First">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Last">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="org">Organization</label>
+          <input type="text" id="org" placeholder="Company / Agency">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="subject">Area of Interest</label>
+          <select id="subject">
+            <option value="">Select one...</option>
+            <option>Teaming / Subcontract Opportunity</option>
+            <option>ISR Operations Support</option>
+            <option>Intelligence Training</option>
+            <option>Program Management Support</option>
+            <option>Key Personnel Staffing</option>
+            <option>International Partner Training</option>
+            <option>Business Development Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us about your requirement..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">
+    <svg width="36" height="36" viewBox="0 0 36 36">
+      <defs>
+        <linearGradient id="fs" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F4F4F4"/><stop offset="100%" stop-color="#AAAAAA"/></linearGradient>
+        <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E2C96A"/><stop offset="100%" stop-color="#C9A84C"/></linearGradient>
+      </defs>
+      <rect x="2" y="2" width="6" height="1.5" fill="#C9A84C"/><rect x="2" y="2" width="1.5" height="6" fill="#C9A84C"/>
+      <rect x="28" y="2" width="6" height="1.5" fill="#C9A84C"/><rect x="32.5" y="2" width="1.5" height="6" fill="#C9A84C"/>
+      <rect x="2" y="32.5" width="6" height="1.5" fill="#C9A84C"/><rect x="2" y="28" width="1.5" height="6" fill="#C9A84C"/>
+      <rect x="28" y="32.5" width="6" height="1.5" fill="#C9A84C"/><rect x="32.5" y="28" width="1.5" height="6" fill="#C9A84C"/>
+      <text x="18" y="21" font-family="Arial Black,Impact,Arial,sans-serif" font-weight="900" font-size="13" fill="url(#fs)" text-anchor="middle">S</text>
+      <rect x="6" y="23" width="24" height="1.2" fill="#C9A84C"/>
+      <text x="18" y="31" font-family="Arial Black,Impact,Arial,sans-serif" font-weight="900" font-size="8" fill="url(#fg)" text-anchor="middle" letter-spacing="2">TS</text>
+    </svg>
+    <div class="footer-copy">
+      © 2025 Strategic Task Solutions, LLC. All rights reserved.<br>
+      Merritt Island, Florida · strategic-task.com
+    </div>
+  </div>
+  <div class="footer-right">
+    <div>CAGE: 12RL1 · UEI: MCDXGW3NWMM4</div>
+    <div class="footer-sdvosb">
+      <div style="width:6px;height:6px;background:#C9A84C;border-radius:50%;"></div>
+      Service-Disabled Veteran-Owned Small Business
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
