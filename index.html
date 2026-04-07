@@ -1159,28 +1159,28 @@
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="return false;">
+      <form class="contact-form" action="https://formspree.io/f/maqlvvnn" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label for="fname">First Name</label>
-            <input type="text" id="fname" placeholder="First">
+            <input type="text" id="fname" name="first_name" placeholder="First" required>
           </div>
           <div class="form-group">
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" placeholder="Last">
+            <input type="text" id="lname" name="last_name" placeholder="Last" required>
           </div>
         </div>
         <div class="form-group">
           <label for="org">Organization</label>
-          <input type="text" id="org" placeholder="Company / Agency">
+          <input type="text" id="org" name="organization" placeholder="Company / Agency">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="your@email.com">
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
           <label for="subject">Area of Interest</label>
-          <select id="subject">
+          <select id="subject" name="area_of_interest">
             <option value="">Select one...</option>
             <option>Teaming / Subcontract Opportunity</option>
             <option>ISR Operations Support</option>
@@ -1194,7 +1194,7 @@
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell us about your requirement..."></textarea>
+          <textarea id="message" name="message" placeholder="Tell us about your requirement..." required></textarea>
         </div>
         <button type="submit" class="form-submit">Send Message</button>
       </form>
